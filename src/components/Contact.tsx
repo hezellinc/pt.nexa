@@ -18,6 +18,8 @@ const services = [
   "Lainnya"
 ];
 
+import ContactMap from './ContactMap';
+
 export default function Contact() {
   const [selectedService, setSelectedService] = useState(services[0]);
   const [customService, setCustomService] = useState('');
@@ -92,6 +94,9 @@ export default function Contact() {
                     <div className="opacity-80">Singapore, Chinatown</div>
                   </div>
                 </div>
+              </div>
+              <div className="mt-8 md:mt-10 h-64 lg:h-80 w-full rounded-2xl overflow-hidden shadow-inner border border-white/5 relative z-10">
+                <ContactMap />
               </div>
             </div>
 
