@@ -1,0 +1,6 @@
+{
+  "name": "PT. NexaTech Solutions",
+  "description": "Website pengiklanan, distribusi, dan penjualan produk jasa IT dengan gaya desain Claymorphism.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

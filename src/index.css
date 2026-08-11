@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--bg-color);
+  --color-text: var(--text-color);
+  --color-primary: var(--primary-color);
+  --color-secondary: var(--secondary-color);
+}
+
+@layer base {
+  :root {
+    --bg-color: #E0E9F5;
+    --text-color: #2D3436;
+    --primary-color: #6C5CE7;
+    --secondary-color: #00cec9;
+
+    --clay-bg: #f0f4f8;
+    --clay-shadow-1: #beccda;
+    --clay-shadow-2: #ffffff;
+    --clay-inset-1: rgba(255, 255, 255, 0.8);
+    --clay-inset-2: rgba(0, 0, 0, 0.05);
+    
+    --clay-input-bg: #E0E9F5;
+    
+    --clay-btn-text: white;
+    --clay-btn-accent-bg: white;
+    --clay-btn-accent-text: #2D3436;
+  }
+
+  .dark {
+    --bg-color: #1a1b1e;
+    --text-color: #f0f4f8;
+    --primary-color: #8c7dff;
+    --secondary-color: #00e6e6;
+
+    --clay-bg: #25262b;
+    --clay-shadow-1: #17181b;
+    --clay-shadow-2: #33343b;
+    --clay-inset-1: rgba(255, 255, 255, 0.05);
+    --clay-inset-2: rgba(0, 0, 0, 0.2);
+    
+    --clay-input-bg: #1a1b1e;
+    
+    --clay-btn-text: white;
+    --clay-btn-accent-bg: #25262b;
+    --clay-btn-accent-text: #f0f4f8;
+  }
+}
+
+@layer utilities {
+  .clay {
+    background: var(--clay-bg);
+    border-radius: 30px;
+    box-shadow: 
+      20px 20px 60px var(--clay-shadow-1), 
+      -20px -20px 60px var(--clay-shadow-2), 
+      inset 6px 6px 12px var(--clay-inset-1), 
+      inset -6px -6px 12px var(--clay-inset-2);
+  }
+  
+  .clay-sm {
+    background: var(--clay-bg);
+    border-radius: 20px;
+    box-shadow: 
+      10px 10px 30px var(--clay-shadow-1), 
+      -10px -10px 30px var(--clay-shadow-2), 
+      inset 4px 4px 8px var(--clay-inset-1), 
+      inset -4px -4px 8px var(--clay-inset-2);
+  }
+
+  .clay-btn {
+    background: var(--primary-color);
+    color: var(--clay-btn-text);
+    border-radius: 15px;
+    box-shadow: 
+      8px 8px 16px var(--clay-shadow-1), 
+      -8px -8px 16px var(--clay-shadow-2), 
+      inset 4px 4px 8px rgba(255,255,255,0.2);
+    transition: all 0.3s;
+  }
+  
+  .clay-btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  .clay-btn:active {
+    transform: scale(0.95);
+    box-shadow: 
+      4px 4px 8px var(--clay-shadow-1), 
+      -4px -4px 8px var(--clay-shadow-2), 
+      inset 4px 4px 8px rgba(255,255,255,0.1);
+  }
+
+  .clay-btn-accent {
+    background: var(--clay-btn-accent-bg);
+    color: var(--clay-btn-accent-text);
+    border-radius: 15px;
+    border: 1px solid var(--clay-btn-accent-bg);
+    box-shadow: 
+      8px 8px 16px var(--clay-shadow-1), 
+      -8px -8px 16px var(--clay-shadow-2);
+    transition: all 0.3s;
+  }
+
+  .clay-btn-accent:hover {
+    transform: translateY(-2px);
+  }
+
+  .clay-btn-accent:active {
+    transform: scale(0.95);
+    box-shadow: 
+      4px 4px 8px var(--clay-shadow-1), 
+      -4px -4px 8px var(--clay-shadow-2), 
+      inset 2px 2px 4px rgba(0,0,0,0.05);
+  }
+
+  .clay-icon-box {
+    background: #A29BFE;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 
+      inset 8px 8px 15px rgba(0,0,0,0.1), 
+      inset -8px -8px 15px rgba(255,255,255,0.3);
+  }
+  
+  .clay-icon-box-accent {
+    background: #74B9FF;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 
+      inset 8px 8px 15px rgba(0,0,0,0.1), 
+      inset -8px -8px 15px rgba(255,255,255,0.3);
+  }
+
+  .clay-icon-box-alt1 {
+    background: #FF7675;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 
+      inset 8px 8px 15px rgba(0,0,0,0.1), 
+      inset -8px -8px 15px rgba(255,255,255,0.3);
+  }
+
+  .clay-icon-box-alt2 {
+    background: #55EFC4;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 
+      inset 8px 8px 15px rgba(0,0,0,0.1), 
+      inset -8px -8px 15px rgba(255,255,255,0.3);
+  }
+
+  .clay-icon-box-alt3 {
+    background: #81ECEC;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 
+      inset 8px 8px 15px rgba(0,0,0,0.1), 
+      inset -8px -8px 15px rgba(255,255,255,0.3);
+  }
+
+  .clay-icon-box-alt4 {
+    background: #FFEAA7;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 
+      inset 8px 8px 15px rgba(0,0,0,0.1), 
+      inset -8px -8px 15px rgba(255,255,255,0.3);
+  }
+  
+  .clay-input {
+    background: var(--clay-input-bg);
+    border-radius: 1rem;
+    box-shadow: 
+      inset 6px 6px 12px var(--clay-shadow-1), 
+      inset -6px -6px 12px var(--clay-shadow-2);
+    outline: none;
+    border: none;
+    padding: 1rem 1.5rem;
+    transition: all 0.2s ease;
+    color: var(--text-color);
+  }
+  
+  .clay-input:focus {
+    box-shadow: 
+      inset 8px 8px 16px var(--clay-shadow-1), 
+      inset -8px -8px 16px var(--clay-shadow-2);
+  }
+
+  .clay-node {
+    border-radius: 50%;
+    box-shadow: 10px 10px 20px var(--clay-shadow-1), -10px -10px 20px var(--clay-shadow-2), inset 4px 4px 8px var(--clay-inset-1);
+  }
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
