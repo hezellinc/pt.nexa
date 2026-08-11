@@ -40,13 +40,13 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto clay-sm px-4 md:px-6 py-3 md:py-4 flex justify-between items-center bg-[color-mix(in_srgb,var(--bg-color)_90%,transparent)] backdrop-blur-md pointer-events-auto transition-colors duration-300">
         <div className="flex items-center gap-2 md:gap-3">
           <motion.div 
-            whileHover={{ rotate: 360 }} 
-            transition={{ duration: 0.5 }}
-            className="w-8 h-8 md:w-10 md:h-10 clay-node bg-primary flex items-center justify-center text-white shrink-0"
+            whileHover={{ scale: 1.05 }} 
+            transition={{ duration: 0.2 }}
+            className="flex items-center justify-center shrink-0"
           >
-            <Rocket size={18} className="md:w-5 md:h-5" />
+            <img src="/nexa-logo.png" alt="NexaTech Logo" className="h-8 md:h-10 w-auto object-contain" />
           </motion.div>
-          <span className="font-bold text-lg md:text-xl tracking-tight text-text truncate">NexaTech <span className="text-primary hidden sm:inline">Solutions</span></span>
+          <span className="font-bold text-lg md:text-xl tracking-tight text-text truncate">PT. NexaTech <span className="text-primary hidden sm:inline">Solution</span></span>
         </div>
 
         {/* Action Buttons */}
