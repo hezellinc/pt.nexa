@@ -8,28 +8,32 @@ const teamMembers = [
     role: 'CEO',
     icon: Briefcase,
     colorClass: 'clay-icon-box',
-    initials: 'MZ'
+    initials: 'MZ',
+    image: undefined
   },
   {
     name: 'Muhammad Fariz Alfauzi',
     role: 'Marketing & Dev',
     icon: Code,
     colorClass: 'clay-icon-box-alt2',
-    initials: 'MF'
+    initials: 'MF',
+    image: undefined
   },
   {
     name: 'Wolid Herdiansyah',
     role: 'Designer UI/UX',
     icon: Palette,
     colorClass: 'clay-icon-box-alt1',
-    initials: 'WH'
+    initials: 'WH',
+    image: undefined
   },
   {
     name: 'Reihan Alvin',
     role: 'Keuangan',
     icon: Calculator,
     colorClass: 'clay-icon-box-alt4',
-    initials: 'RA'
+    initials: 'RA',
+    image: undefined
   }
 ];
 

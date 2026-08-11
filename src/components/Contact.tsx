@@ -1,6 +1,6 @@
 import { Mail, Phone, MapPin, Send, ChevronDown, Check, CheckCircle } from 'lucide-react';
 import InteractiveIcon from './InteractiveIcon';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import confetti from 'canvas-confetti';
 
