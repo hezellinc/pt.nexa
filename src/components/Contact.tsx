@@ -58,7 +58,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="kontak" className="lazy-section py-20 px-4 md:px-8">
+    <section id="kontak" className="lazy-section py-8 md:py-10 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="clay p-6 sm:p-8 md:p-12">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-12">

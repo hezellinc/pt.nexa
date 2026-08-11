@@ -61,7 +61,7 @@ const impactStats = [
 
 export default function Impact() {
   return (
-    <section id="dampak" className="lazy-section py-20 px-4 md:px-8">
+    <section id="dampak" className="lazy-section py-8 md:py-10 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="clay p-8 md:p-12 relative overflow-hidden">
           {/* Background Decorative Elements */}

@@ -31,9 +31,9 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="proses" className="lazy-section py-20 px-4 md:px-8">
+    <section id="proses" className="lazy-section py-8 md:py-10 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 md:mb-20">
+        <div className="text-center mb-10 md:mb-12">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}

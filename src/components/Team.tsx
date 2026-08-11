@@ -35,9 +35,9 @@ const teamMembers = [
 
 export default function Team() {
   return (
-    <section id="tim" className="lazy-section py-20 px-4 md:px-8">
+    <section id="tim" className="lazy-section py-8 md:py-10 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-8 md:mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text">Tim Kami</h2>
           <p className="text-base md:text-lg opacity-80 max-w-2xl mx-auto px-2">
             Pakar-pakar kreatif dan teknis di balik kesuksesan solusi digital NexaTech.
