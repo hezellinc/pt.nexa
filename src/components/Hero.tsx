@@ -1,36 +1,41 @@
 import { motion } from 'motion/react';
 import { Monitor, Smartphone, PenTool, LayoutTemplate } from 'lucide-react';
 import InteractiveIcon from './InteractiveIcon';
-import GradientWaves from './GradientWaves';
 
 export default function Hero() {
   return (
     <section id="beranda" className="lazy-section pt-32 pb-12 flex flex-col items-center justify-center relative px-4">
       
-      {/* Dynamic Wave Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-        <GradientWaves
-          horizonColor="#5227FF"
-          waveColor="#FF9FFC"
-          crestColor="#FFFFFF"
-          speed={0.4}
-          amplitude={2.5}
-          waveScale={0.6}
-          waveRatio={0.9}
-          swell={35}
-          turbulence={20}
-          tilt={1.11}
-          zoom={1}
-          height={5.5}
-          fogDepth={15}
-          detail="medium"
-          brightness={1}
-          opacity={0.3}
-          mouseInteraction={false}
-          parallaxStrength={0.5}
-          grain={true}
-          grainIntensity={0.05}
-        />
+      {/* Floating background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div 
+          animate={{ y: [0, -30, 0], x: [0, 20, 0] }} 
+          transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+          className="absolute top-1/4 left-[5%] md:left-[10%] opacity-30 md:opacity-50"
+        >
+          <InteractiveIcon icon={PenTool} colorClass="clay-icon-box-alt1" size={24} />
+        </motion.div>
+        <motion.div 
+          animate={{ y: [0, 40, 0], x: [0, -20, 0] }} 
+          transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
+          className="absolute top-1/3 right-[5%] md:right-[15%] opacity-30 md:opacity-50"
+        >
+          <InteractiveIcon icon={Monitor} colorClass="clay-icon-box-alt2" size={24} />
+        </motion.div>
+        <motion.div 
+          animate={{ y: [0, -20, 0], rotate: [0, 10, -10, 0] }} 
+          transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+          className="absolute bottom-1/4 left-[10%] md:left-[20%] opacity-30 md:opacity-50"
+        >
+          <InteractiveIcon icon={Smartphone} colorClass="clay-icon-box-alt3" size={24} />
+        </motion.div>
+        <motion.div 
+          animate={{ y: [0, 30, 0], rotate: [0, -15, 15, 0] }} 
+          transition={{ repeat: Infinity, duration: 7, ease: "easeInOut" }}
+          className="absolute bottom-1/3 right-[5%] md:right-[10%] opacity-30 md:opacity-50"
+        >
+          <InteractiveIcon icon={LayoutTemplate} colorClass="clay-icon-box-alt4" size={24} />
+        </motion.div>
       </div>
 
       <div className="max-w-4xl mx-auto text-center z-10 w-full">
