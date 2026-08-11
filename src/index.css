@@ -69,55 +69,117 @@
   }
 
   .clay-btn {
-    background: var(--primary-color);
+    background: transparent;
     color: var(--clay-btn-text);
     border-radius: 15px;
+    position: relative;
+    z-index: 1;
+    will-change: transform;
+    transform: translateZ(0);
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  
+  .clay-btn::before, .clay-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    z-index: -1;
+    background: var(--primary-color);
+    transition: opacity 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .clay-btn::before {
     box-shadow: 
       8px 8px 16px var(--clay-shadow-1), 
       -8px -8px 16px var(--clay-shadow-2), 
       inset 4px 4px 8px rgba(255,255,255,0.2);
-    transition: all 0.3s;
+    opacity: 1;
   }
-  
-  .clay-btn:hover {
-    transform: translateY(-2px);
-  }
-  
-  .clay-btn:active {
-    transform: scale(0.95);
+
+  .clay-btn::after {
     box-shadow: 
       4px 4px 8px var(--clay-shadow-1), 
       -4px -4px 8px var(--clay-shadow-2), 
       inset 4px 4px 8px rgba(255,255,255,0.1);
+    opacity: 0;
+  }
+
+  .clay-btn:hover {
+    transform: translateY(-2px) translateZ(0);
+  }
+  
+  .clay-btn:active {
+    transform: scale(0.95) translateZ(0);
+  }
+  
+  .clay-btn:active::before {
+    opacity: 0;
+  }
+  
+  .clay-btn:active::after {
+    opacity: 1;
   }
 
   .clay-btn-accent {
-    background: var(--clay-btn-accent-bg);
+    background: transparent;
     color: var(--clay-btn-accent-text);
     border-radius: 15px;
+    position: relative;
+    z-index: 1;
+    will-change: transform;
+    transform: translateZ(0);
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .clay-btn-accent::before, .clay-btn-accent::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    z-index: -1;
+    background: var(--clay-btn-accent-bg);
     border: 1px solid var(--clay-btn-accent-bg);
+    transition: opacity 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .clay-btn-accent::before {
     box-shadow: 
       8px 8px 16px var(--clay-shadow-1), 
       -8px -8px 16px var(--clay-shadow-2);
-    transition: all 0.3s;
+    opacity: 1;
   }
 
-  .clay-btn-accent:hover {
-    transform: translateY(-2px);
-  }
-
-  .clay-btn-accent:active {
-    transform: scale(0.95);
+  .clay-btn-accent::after {
     box-shadow: 
       4px 4px 8px var(--clay-shadow-1), 
       -4px -4px 8px var(--clay-shadow-2), 
       inset 2px 2px 4px rgba(0,0,0,0.05);
+    opacity: 0;
+  }
+
+  .clay-btn-accent:hover {
+    transform: translateY(-2px) translateZ(0);
+  }
+
+  .clay-btn-accent:active {
+    transform: scale(0.95) translateZ(0);
+  }
+
+  .clay-btn-accent:active::before {
+    opacity: 0;
+  }
+
+  .clay-btn-accent:active::after {
+    opacity: 1;
   }
 
   .clay-icon-box {
     background: #A29BFE;
     color: white;
     border-radius: 20px;
+    will-change: transform;
+    transform: translateZ(0);
     box-shadow: 
       inset 8px 8px 15px rgba(0,0,0,0.1), 
       inset -8px -8px 15px rgba(255,255,255,0.3);
@@ -127,6 +189,8 @@
     background: #74B9FF;
     color: white;
     border-radius: 20px;
+    will-change: transform;
+    transform: translateZ(0);
     box-shadow: 
       inset 8px 8px 15px rgba(0,0,0,0.1), 
       inset -8px -8px 15px rgba(255,255,255,0.3);
@@ -136,6 +200,8 @@
     background: #FF7675;
     color: white;
     border-radius: 20px;
+    will-change: transform;
+    transform: translateZ(0);
     box-shadow: 
       inset 8px 8px 15px rgba(0,0,0,0.1), 
       inset -8px -8px 15px rgba(255,255,255,0.3);
@@ -145,6 +211,8 @@
     background: #55EFC4;
     color: white;
     border-radius: 20px;
+    will-change: transform;
+    transform: translateZ(0);
     box-shadow: 
       inset 8px 8px 15px rgba(0,0,0,0.1), 
       inset -8px -8px 15px rgba(255,255,255,0.3);
@@ -154,6 +222,8 @@
     background: #81ECEC;
     color: white;
     border-radius: 20px;
+    will-change: transform;
+    transform: translateZ(0);
     box-shadow: 
       inset 8px 8px 15px rgba(0,0,0,0.1), 
       inset -8px -8px 15px rgba(255,255,255,0.3);
@@ -163,6 +233,8 @@
     background: #FFEAA7;
     color: white;
     border-radius: 20px;
+    will-change: transform;
+    transform: translateZ(0);
     box-shadow: 
       inset 8px 8px 15px rgba(0,0,0,0.1), 
       inset -8px -8px 15px rgba(255,255,255,0.3);
@@ -177,7 +249,7 @@
     outline: none;
     border: none;
     padding: 1rem 1.5rem;
-    transition: all 0.2s ease;
+    transition: color 0.2s ease, background-color 0.2s ease;
     color: var(--text-color);
   }
   
@@ -190,6 +262,11 @@
   .clay-node {
     border-radius: 50%;
     box-shadow: 10px 10px 20px var(--clay-shadow-1), -10px -10px 20px var(--clay-shadow-2), inset 4px 4px 8px var(--clay-inset-1);
+  }
+
+  .lazy-section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 1000px;
   }
 }
 

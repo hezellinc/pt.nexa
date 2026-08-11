@@ -4,7 +4,7 @@ import InteractiveIcon from './InteractiveIcon';
 
 export default function About() {
   return (
-    <section id="tentang" className="py-20 px-4 md:px-8">
+    <section id="tentang" className="lazy-section py-20 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           

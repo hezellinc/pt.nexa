@@ -35,7 +35,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="layanan" className="py-20 px-4 md:px-8 bg-[color-mix(in_srgb,var(--bg-color)_50%,transparent)]">
+    <section id="layanan" className="lazy-section py-20 px-4 md:px-8 bg-[color-mix(in_srgb,var(--bg-color)_50%,transparent)]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text">Layanan Unggulan Kami</h2>

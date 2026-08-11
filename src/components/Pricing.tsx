@@ -51,7 +51,7 @@ const plans = [
 
 export default function Pricing() {
   return (
-    <section id="harga" className="py-20 px-4 md:px-8 bg-[color-mix(in_srgb,var(--bg-color)_30%,transparent)]">
+    <section id="harga" className="lazy-section py-20 px-4 md:px-8 bg-[color-mix(in_srgb,var(--bg-color)_30%,transparent)]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <motion.div

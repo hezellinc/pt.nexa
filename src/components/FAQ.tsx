@@ -38,7 +38,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-20 px-4 md:px-8 bg-[color-mix(in_srgb,var(--bg-color)_50%,transparent)]">
+    <section id="faq" className="lazy-section py-20 px-4 md:px-8 bg-[color-mix(in_srgb,var(--bg-color)_50%,transparent)]">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <motion.div

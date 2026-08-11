@@ -4,7 +4,7 @@ import InteractiveIcon from './InteractiveIcon';
 
 export default function Hero() {
   return (
-    <section id="beranda" className="min-h-screen pt-32 pb-20 flex flex-col items-center justify-center relative px-4">
+    <section id="beranda" className="lazy-section min-h-screen pt-32 pb-20 flex flex-col items-center justify-center relative px-4">
       
       {/* Floating background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
