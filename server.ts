@@ -38,35 +38,36 @@ async function startServer() {
   app.post("/api/chat", async (req, res) => {
     try {
       const { messages } = req.body;
-      const apiKey = process.env.OPENROUTER_API_KEY;
+      const apiKey = process.env.MAXROUTER_API_KEY;
+      
+      // Fallback URL jika environment variable tidak diset
+      const baseUrl = process.env.MAXROUTER_BASE_URL || "https://api.maxrouter.com/v1/chat/completions";
 
       if (!apiKey) {
-        return res.status(500).json({ error: "OPENROUTER_API_KEY is missing" });
+        return res.status(500).json({ error: "MAXROUTER_API_KEY is missing" });
       }
 
-      const openRouterMessages = [
+      const maxRouterMessages = [
         { role: "system", content: SYSTEM_PROMPT },
         ...messages
       ];
 
-      const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      const response = await fetch(baseUrl, {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-          "HTTP-Referer": "https://nexatech.com", // Optional
-          "X-Title": "NexaTech Assistant" // Optional
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          model: "google/gemini-2.5-flash", // Menggunakan engine gemini via OpenRouter
-          messages: openRouterMessages,
+          model: "deepseek-v3.2", // Menggunakan model DeepSeek via MaxRouter
+          messages: maxRouterMessages,
         })
       });
 
       if (!response.ok) {
         const errorText = await response.text();
-        console.error("OpenRouter API Error:", errorText);
-        return res.status(response.status).json({ error: "OpenRouter API Error" });
+        console.error("MaxRouter API Error:", errorText);
+        return res.status(response.status).json({ error: `MaxRouter API Error: ${response.statusText}` });
       }
 
       const data = await response.json();
