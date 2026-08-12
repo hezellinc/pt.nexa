@@ -1,5 +1,3 @@
-import { GoogleGenAI } from "@google/genai";
-
 const SYSTEM_PROMPT = `Anda adalah Nexa Assistant, konsultan AI resmi untuk PT. NexaTech Solutions.
 Tugas Anda adalah membantu klien (fokus pada korporasi dan B2B PT Teknologi Digital) memahami layanan IT, IoT, AI Software, dan transformasi digital kami.
 Gunakan format **Markdown** untuk setiap jawaban Anda agar rapi, terstruktur, dan mudah dibaca (gunakan bullet points, bold, list, atau heading jika perlu). 
@@ -34,45 +32,48 @@ export default async function handler(req: any, res: any) {
 
   try {
     const { messages } = req.body;
-    const apiKey = process.env.GEMINI_API_KEY;
+    const apiKey = process.env.OPENROUTER_API_KEY;
 
     if (!apiKey) {
-      return res.status(500).json({ error: "GEMINI_API_KEY is missing" });
+      return res.status(500).json({ error: "OPENROUTER_API_KEY is missing" });
     }
 
-    const ai = new GoogleGenAI({ apiKey });
-    
-    // Ensure messages start with 'user'
-    let geminiMessages = messages.map((msg: any) => ({
-      role: msg.role === 'assistant' ? 'model' : 'user',
-      parts: [{ text: msg.content }]
-    }));
+    const openRouterMessages = [
+      { role: "system", content: SYSTEM_PROMPT },
+      ...messages
+    ];
 
-    // Find the first user message
-    const firstUserIndex = geminiMessages.findIndex((m: any) => m.role === 'user');
-    if (firstUserIndex > 0) {
-      geminiMessages = geminiMessages.slice(firstUserIndex);
-    } else if (firstUserIndex === -1) {
-      return res.status(200).json({ choices: [{ message: { content: "Silakan mulai percakapan." } }] });
-    }
-
-    const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
-      contents: geminiMessages,
-      config: {
-        systemInstruction: SYSTEM_PROMPT,
-      }
+    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+        "HTTP-Referer": "https://nexatech.com", // Optional
+        "X-Title": "NexaTech Assistant" // Optional
+      },
+      body: JSON.stringify({
+        model: "google/gemini-2.5-flash", 
+        messages: openRouterMessages,
+      })
     });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error("OpenRouter API Error:", errorText);
+      return res.status(response.status).json({ error: "OpenRouter API Error" });
+    }
+
+    const data = await response.json();
 
     res.status(200).json({
       choices: [{
         message: {
-          content: response.text
+          content: data.choices[0].message.content
         }
       }]
     });
   } catch (error) {
-    console.error("Vercel Gemini Server Error:", error);
+    console.error("Vercel OpenRouter Server Error:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 }

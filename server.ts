@@ -1,7 +1,6 @@
 import express from "express";
 import path from "path";
 import { createServer as createViteServer } from "vite";
-import { GoogleGenAI } from "@google/genai";
 
 const SYSTEM_PROMPT = `Anda adalah Nexa Assistant, konsultan AI resmi untuk PT. NexaTech Solutions.
 Tugas Anda adalah membantu klien (fokus pada korporasi dan B2B PT Teknologi Digital) memahami layanan IT, IoT, AI Software, dan transformasi digital kami.
@@ -39,46 +38,49 @@ async function startServer() {
   app.post("/api/chat", async (req, res) => {
     try {
       const { messages } = req.body;
-      const apiKey = process.env.GEMINI_API_KEY;
+      const apiKey = process.env.OPENROUTER_API_KEY;
 
       if (!apiKey) {
-        return res.status(500).json({ error: "GEMINI_API_KEY is missing" });
+        return res.status(500).json({ error: "OPENROUTER_API_KEY is missing" });
       }
 
-      const ai = new GoogleGenAI({ apiKey });
-      
-      // Ensure messages start with 'user'
-      let geminiMessages = messages.map((msg: any) => ({
-        role: msg.role === 'assistant' ? 'model' : 'user',
-        parts: [{ text: msg.content }]
-      }));
+      const openRouterMessages = [
+        { role: "system", content: SYSTEM_PROMPT },
+        ...messages
+      ];
 
-      // Find the first user message
-      const firstUserIndex = geminiMessages.findIndex((m: any) => m.role === 'user');
-      if (firstUserIndex > 0) {
-        geminiMessages = geminiMessages.slice(firstUserIndex);
-      } else if (firstUserIndex === -1) {
-        return res.json({ choices: [{ message: { content: "Silakan mulai percakapan." } }] });
-      }
-
-      const response = await ai.models.generateContent({
-        model: 'gemini-3.6-flash',
-        contents: geminiMessages,
-        config: {
-          systemInstruction: SYSTEM_PROMPT,
-        }
+      const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+          "HTTP-Referer": "https://nexatech.com", // Optional
+          "X-Title": "NexaTech Assistant" // Optional
+        },
+        body: JSON.stringify({
+          model: "google/gemini-2.5-flash", // Menggunakan engine gemini via OpenRouter
+          messages: openRouterMessages,
+        })
       });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error("OpenRouter API Error:", errorText);
+        return res.status(response.status).json({ error: "OpenRouter API Error" });
+      }
+
+      const data = await response.json();
 
       // Format response back to what the frontend expects
       res.json({
         choices: [{
           message: {
-            content: response.text
+            content: data.choices[0].message.content
           }
         }]
       });
     } catch (error) {
-      console.error("Gemini Server Error:", error);
+      console.error("Chat Server Error:", error);
       res.status(500).json({ error: "Internal server error" });
     }
   });
