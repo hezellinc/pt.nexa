@@ -72,7 +72,8 @@ export default function NexaAssistant() {
       // Memanggil puter.js
       const response = await puter.ai.chat(chatMessages, { model: 'deepseek-v3.2' });
       
-      const assistantMessage = response?.message?.content || (typeof response === 'string' ? response : "Maaf, format respon tidak dikenali.");
+      const assistantContent = response?.message?.content;
+      const assistantMessage: string = typeof assistantContent === 'string' ? assistantContent : (typeof response === 'string' ? response : "Maaf, format respon tidak dikenali.");
       setMessages(prev => [...prev, { role: 'assistant', content: assistantMessage }]);
     } catch (error) {
       console.error("Puter AI Error:", error);
