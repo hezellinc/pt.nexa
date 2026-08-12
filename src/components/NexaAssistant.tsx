@@ -14,10 +14,13 @@ INFORMASI PERUSAHAAN (PT. NexaTech Solutions):
 - **Kontak**: Email (nexatech@yahoo.com), Telepon/WA (+62 877-9872-5167).
 
 LAYANAN KAMI:
-1. **Website Development**: Pembuatan infrastruktur website enterprise, e-commerce, hingga web-apps interaktif dengan performa tinggi.
-2. **UI/UX Design**: Riset dan desain antarmuka B2B yang estetis serta berpusat pada kenyamanan pengguna.
-3. **Aplikasi Bisnis & IoT**: Pengembangan aplikasi manajemen, software AI, dan integrasi IoT untuk mempermudah operasional bisnis.
-4. **Desain Grafis**: Branding identity untuk memperkuat posisi perusahaan klien di pasar.
+1. **NEXAWEB (Website Creation)**: Pembuatan infrastruktur website enterprise, e-commerce, hingga web-apps interaktif dengan performa tinggi.
+2. **NEXAAPP (Simple Application)**: Pengembangan aplikasi web dan mobile ringan untuk mempermudah operasional dan manajemen bisnis.
+3. **NEXADESIGN (UI / UX Design)**: Riset dan desain antarmuka B2B yang estetis serta berpusat pada kenyamanan pengguna.
+4. **NEXABRAND (Logo & Visual Identity)**: Branding identity untuk memperkuat posisi perusahaan klien di pasar.
+5. **NEXAMEDIA (Poster / Pamphlet)**: Layanan desain grafis untuk poster, pamflet, dan media promosi cetak maupun digital.
+6. **NEXAPROFILE (Company Profile)**: Pembuatan company profile profesional yang merepresentasikan kredibilitas bisnis Anda.
+7. **NEXADIGITAL (Digital Marketing)**: Strategi pemasaran digital, SEO, dan manajemen kampanye online untuk meningkatkan konversi.
 
 TIM KAMI (Pakar Kreatif & Teknis):
 - **Muhammad Zyldan Muzhaffar**: CEO

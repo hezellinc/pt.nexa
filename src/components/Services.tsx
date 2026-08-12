@@ -1,36 +1,64 @@
 import { motion } from 'motion/react';
-import { Globe, Layout, Smartphone, PenTool, ArrowRight } from 'lucide-react';
+import { AppWindow, Smartphone, PenTool, Sparkles, FileImage, BookOpen, TrendingUp, ArrowRight } from 'lucide-react';
 import InteractiveIcon from './InteractiveIcon';
 
 export default function Services() {
   const services = [
     { 
       id: 1,
-      title: 'Website Development', 
+      title: 'NEXAWEB',
+      subtitle: 'WEBSITE CREATION',
       desc: 'Pembuatan website company profile, e-commerce, hingga landing page interaktif dengan performa tinggi dan SEO friendly.', 
-      icon: Globe,
+      icon: AppWindow,
       colorClass: 'clay-icon-box-alt2'
     },
     { 
       id: 2,
-      title: 'UI/UX Design', 
-      desc: 'Riset, wireframing, dan desain antarmuka yang estetis serta berpusat pada kenyamanan pengguna (User-Centric).', 
-      icon: Layout,
-      colorClass: 'clay-icon-box-alt1'
-    },
-    { 
-      id: 3,
-      title: 'Aplikasi Sederhana', 
+      title: 'NEXAAPP',
+      subtitle: 'SIMPLE APPLICATION',
       desc: 'Pengembangan aplikasi web dan mobile ringan untuk mempermudah operasional dan manajemen bisnis Anda.', 
       icon: Smartphone,
       colorClass: 'clay-icon-box-alt3'
     },
     { 
-      id: 4,
-      title: 'Desain Grafis', 
-      desc: 'Branding identity, logo, ilustrasi, dan materi pemasaran visual untuk memperkuat identitas brand perusahaan Anda.', 
+      id: 3,
+      title: 'NEXADESIGN',
+      subtitle: 'UI / UX DESIGN',
+      desc: 'Riset, wireframing, dan desain antarmuka yang estetis serta berpusat pada kenyamanan pengguna (User-Centric).', 
       icon: PenTool,
+      colorClass: 'clay-icon-box-alt1'
+    },
+    { 
+      id: 4,
+      title: 'NEXABRAND',
+      subtitle: 'LOGO & VISUAL IDENTITY',
+      desc: 'Branding identity, logo, ilustrasi, dan materi pemasaran visual untuk memperkuat identitas brand perusahaan Anda.', 
+      icon: Sparkles,
       colorClass: 'clay-icon-box-alt4'
+    },
+    { 
+      id: 5,
+      title: 'NEXAMEDIA',
+      subtitle: 'POSTER / PAMPHLET',
+      desc: 'Layanan desain grafis untuk poster, pamflet, dan media promosi cetak maupun digital yang menarik.', 
+      icon: FileImage,
+      colorClass: 'clay-icon-box-alt2'
+    },
+    { 
+      id: 6,
+      title: 'NEXAPROFILE',
+      subtitle: 'COMPANY PROFILE',
+      desc: 'Pembuatan company profile profesional yang merepresentasikan nilai dan kredibilitas bisnis Anda di mata klien.', 
+      icon: BookOpen,
+      colorClass: 'clay-icon-box-alt1'
+    },
+    { 
+      id: 7,
+      title: 'NEXADIGITAL',
+      subtitle: 'DIGITAL MARKETING',
+      desc: 'Strategi pemasaran digital, SEO, dan manajemen kampanye online untuk meningkatkan konversi dan jangkauan audiens Anda.', 
+      icon: TrendingUp,
+      colorClass: 'clay-icon-box-alt3'
     },
   ];
 
@@ -44,7 +72,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-10">
           {services.map((service, index) => (
             <motion.div 
               key={service.id}
@@ -61,7 +89,8 @@ export default function Services() {
                   <ArrowRight size={18} className="md:w-5 md:h-5" />
                 </div>
               </div>
-              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-text">{service.title}</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-1 text-text">{service.title}</h3>
+              <p className="text-xs font-semibold text-primary/80 mb-3 md:mb-4 uppercase tracking-wider">{service.subtitle}</p>
               <p className="opacity-80 leading-relaxed flex-grow text-sm md:text-base">
                 {service.desc}
               </p>
