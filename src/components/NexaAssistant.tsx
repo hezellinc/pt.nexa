@@ -90,23 +90,27 @@ export default function NexaAssistant() {
             </div>
 
             {/* Chat Area */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4">
+            <div className="flex-1 overflow-y-auto p-4 space-y-5">
               {messages.map((msg, idx) => (
                 <div 
                   key={idx} 
                   className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
-                  <div className={`max-w-[80%] p-3 rounded-2xl ${
+                  <div className={`max-w-[85%] p-4 rounded-3xl ${
                     msg.role === 'user' 
                       ? 'clay-btn text-white rounded-br-sm' 
-                      : 'clay-sm bg-black/10 text-text rounded-bl-sm'
+                      : 'clay-sm bg-[var(--clay-bg)] text-text rounded-bl-sm'
                   }`}>
                     {msg.role === 'assistant' && (
-                      <div className="flex items-center gap-2 mb-1 opacity-70">
-                        <Bot size={14} /> <span className="text-xs font-medium">Nexa Assistant</span>
+                      <div className="flex items-center gap-2 mb-2 opacity-80 border-b border-black/10 dark:border-white/10 pb-2">
+                        <Bot size={14} className="text-primary" /> <span className="text-xs font-bold text-primary">Nexa Assistant</span>
                       </div>
                     )}
-                    <div className="text-sm prose prose-sm dark:prose-invert max-w-none leading-relaxed prose-p:my-1 prose-ul:my-1 prose-li:my-0">
+                    <div className={`text-sm prose prose-sm max-w-none leading-relaxed prose-p:my-1 prose-ul:my-1 prose-li:my-0 ${
+                      msg.role === 'user'
+                      ? 'text-white prose-p:text-white prose-headings:text-white prose-strong:text-white prose-a:text-white'
+                      : 'dark:prose-invert prose-p:text-current prose-headings:text-current prose-strong:text-current'
+                    }`}>
                       <ReactMarkdown>{msg.content}</ReactMarkdown>
                     </div>
                   </div>
@@ -114,9 +118,9 @@ export default function NexaAssistant() {
               ))}
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="clay-sm bg-black/10 text-text rounded-2xl rounded-bl-sm p-4 flex items-center gap-2">
+                  <div className="clay-sm bg-[var(--clay-bg)] text-text rounded-3xl rounded-bl-sm p-4 flex items-center gap-3">
                     <Loader2 size={16} className="animate-spin text-primary" />
-                    <span className="text-sm opacity-80">Mengetik...</span>
+                    <span className="text-sm font-semibold opacity-80">Mengetik balasan...</span>
                   </div>
                 </div>
               )}
