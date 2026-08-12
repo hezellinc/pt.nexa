@@ -54,7 +54,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-6 md:mb-8 text-text leading-tight px-2"
         >
-          Tingkatkan Bisnis Anda dengan <span className="text-primary block sm:inline">NexaTech</span>
+          Solusi B2B untuk <span className="text-primary block sm:inline">Perusahaan Teknologi</span> & Bisnis Modern
         </motion.h1>
         
         <motion.p 
@@ -63,7 +63,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-base sm:text-lg md:text-xl opacity-80 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed px-4"
         >
-          Kami memberikan solusi menyeluruh mulai dari Pengiklanan strategi digital, Desain & Pengembangan (Produk Jasa), hingga proses Penjualan dan Pendistribusian yang modern.
+          Kami menjadi mitra strategis (B2B) bagi PT Teknologi Digital dalam memberikan solusi menyeluruh—dari strategi pemasaran IT, pengembangan infrastruktur Software & IoT, hingga optimalisasi operasional enterprise skala besar.
         </motion.p>
         
         <motion.div 

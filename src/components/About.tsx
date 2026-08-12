@@ -46,12 +46,12 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="w-full lg:w-1/2"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-text">Mitra Transformasi Digital Terpercaya</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-text">Mitra Transformasi IT & Digital Terpercaya</h2>
             <p className="opacity-80 mb-4 md:mb-6 text-base md:text-lg leading-relaxed">
-              PT. NexaTech Solutions adalah perusahaan teknologi yang berfokus pada pengembangan produk dan jasa digital kreatif. Kami membantu bisnis dari berbagai skala untuk beradaptasi, tumbuh, dan mendominasi di era digital.
+              PT. NexaTech Solutions adalah pionir penyedia solusi B2B yang dikhususkan bagi korporasi dan perusahaan-perusahaan teknologi (PT Teknologi Digital). Kami merancang infrastruktur digital yang tangguh, cerdas, dan efisien.
             </p>
             <p className="opacity-80 mb-8 md:mb-10 text-base md:text-lg leading-relaxed">
-              Pendekatan kami menggabungkan estetika desain mutakhir dengan teknologi terkini. Dari perumusan konsep strategi marketing hingga pendistribusian produk jadi yang siap pakai di pasaran, memastikan setiap solusi memberikan hasil nyata.
+              Fokus utama kami adalah menghadirkan skalabilitas dan keandalan sistem berskala enterprise. Melalui integrasi kecerdasan buatan (AI) dan IoT, kami memastikan efisiensi biaya serta akselerasi margin keuntungan perusahaan Anda berjalan seimbang.
             </p>
           </motion.div>
 
