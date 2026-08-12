@@ -70,13 +70,20 @@ async function startServer() {
         return res.status(response.status).json({ error: `MaxRouter API Error: ${response.statusText}` });
       }
 
-      const data = await response.json();
+      const responseText = await response.text();
+      let data;
+      try {
+        data = JSON.parse(responseText);
+      } catch (parseError) {
+        console.error("Invalid JSON from MaxRouter:", responseText);
+        return res.status(500).json({ error: "MaxRouter URL salah. Pastikan MAXROUTER_BASE_URL berakhiran dengan /v1/chat/completions" });
+      }
 
       // Format response back to what the frontend expects
       res.json({
         choices: [{
           message: {
-            content: data.choices[0].message.content
+            content: data.choices?.[0]?.message?.content || "Respon dari server kosong."
           }
         }]
       });
