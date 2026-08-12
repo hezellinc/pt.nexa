@@ -108,8 +108,8 @@ export default function NexaAssistant() {
                     )}
                     <div className={`text-sm prose prose-sm max-w-none leading-relaxed prose-p:my-1 prose-ul:my-1 prose-li:my-0 ${
                       msg.role === 'user'
-                      ? 'text-white prose-p:text-white prose-headings:text-white prose-strong:text-white prose-a:text-white'
-                      : 'dark:prose-invert prose-p:text-current prose-headings:text-current prose-strong:text-current'
+                      ? 'text-white prose-p:text-white prose-headings:text-white prose-strong:text-white prose-li:text-white'
+                      : 'text-text prose-p:text-text prose-headings:text-text prose-strong:text-text prose-li:text-text prose-a:text-primary'
                     }`}>
                       <ReactMarkdown>{msg.content}</ReactMarkdown>
                     </div>
