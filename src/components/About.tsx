@@ -47,12 +47,48 @@ export default function About() {
             className="w-full lg:w-1/2"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-text">Mitra Transformasi IT & Digital Terpercaya</h2>
-            <p className="opacity-80 mb-4 md:mb-6 text-base md:text-lg leading-relaxed">
-              PT. NexaTech Solutions adalah pionir penyedia solusi B2B yang dikhususkan bagi korporasi dan perusahaan-perusahaan teknologi (PT Teknologi Digital). Kami merancang infrastruktur digital yang tangguh, cerdas, dan efisien.
+            <p className="opacity-80 mb-6 md:mb-8 text-base md:text-lg leading-relaxed">
+              PT. NexaTech Solutions adalah pionir penyedia solusi digital B2B terintegrasi. Kami merancang infrastruktur digital yang tangguh, inovatif, dan efisien untuk memastikan margin keuntungan perusahaan Anda berakselerasi.
             </p>
-            <p className="opacity-80 mb-8 md:mb-10 text-base md:text-lg leading-relaxed">
-              Fokus utama kami adalah menghadirkan skalabilitas dan keandalan sistem berskala enterprise. Melalui integrasi kecerdasan buatan (AI) dan IoT, kami memastikan efisiensi biaya serta akselerasi margin keuntungan perusahaan Anda berjalan seimbang.
-            </p>
+            
+            <div className="space-y-6">
+              <div className="clay-sm p-6 rounded-2xl relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                <div className="absolute top-0 left-0 w-2 h-full bg-primary/80"></div>
+                <h3 className="text-xl font-bold mb-3 flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-primary/10">
+                    <Target size={20} className="text-primary" />
+                  </div>
+                  Visi Perusahaan
+                </h3>
+                <p className="opacity-80 text-sm md:text-base leading-relaxed">
+                  Menjadi mitra transformasi digital terdepan yang memberdayakan ekosistem bisnis global melalui inovasi teknologi cerdas, adaptif, dan berkelanjutan.
+                </p>
+              </div>
+
+              <div className="clay-sm p-6 rounded-2xl relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                <div className="absolute top-0 left-0 w-2 h-full bg-purple-500/80"></div>
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-purple-500/10">
+                    <Zap size={20} className="text-purple-500" />
+                  </div>
+                  Misi Utama
+                </h3>
+                <ul className="space-y-3 opacity-80 text-sm md:text-base leading-relaxed">
+                  <li className="flex items-start gap-3">
+                    <span className="text-purple-500 font-bold mt-0.5 opacity-60">01.</span>
+                    <span>Menghadirkan solusi pengembangan Web, Aplikasi & Desain UI/UX dengan standar kualitas enterprise.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-purple-500 font-bold mt-0.5 opacity-60">02.</span>
+                    <span>Mengoptimalkan konversi bisnis klien melalui Digital Marketing dan identitas visual yang kuat.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-purple-500 font-bold mt-0.5 opacity-60">03.</span>
+                    <span>Membangun kolaborasi jangka panjang berdasarkan profesionalisme, integritas, dan jaminan kinerja.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </motion.div>
 
         </div>
